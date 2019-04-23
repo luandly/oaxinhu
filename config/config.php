@@ -55,10 +55,19 @@ $config		= array(
 
 //引入配置文件
 $_confpath		= $rock->strformat('?0/?1/?1Config.php', ROOT_PATH, PROJECT);
+
+// C:/phpStudy/PHPTutorial/WWW/oaxinhu/webmain/webmainConfig.php
+// echo '<pre>', $_confpath, '</pre>';
+// echo '<pre>', ROOT_PATH, '</pre>';
+// C:/phpStudy/PHPTutorial/WWW/oaxinhu
+// echo '<pre>', PROJECT, '</pre>';
+// webmain
 if(file_exists($_confpath)){
 	$_tempconf	= require($_confpath);
+	
 	foreach($_tempconf as $_tkey=>$_tvs)$config[$_tkey] = $_tvs;
 	if(isempt($config['url']))$config['url'] = $rock->url();
+// 	echo '<pre>111     ', $rock->url(), '</pre>';
 	if(!isempt($config['memory_limit']) && function_exists('ini_set'))
 		ini_set('memory_limit', $config['memory_limit']);
 	if($config['timeout']>-1 && function_exists('set_time_limit'))set_time_limit($config['timeout']);	
