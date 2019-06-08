@@ -148,7 +148,22 @@ function opentixiang(){
 }
 
 function clickhome(){
-	var ad = {num:'home',url:'home,index',icons:'home',name:'首页',hideclose:true};
+	/*
+	 * 
+	 * 
+	 * [固定资产]页面地址是：webmain/main/assetm/rock_assetm_list.php
+	 * ，在[系统→基础管理→菜单管理]设置URL地址为：main,assetm,list
+	 * [首页]页面地址是：webmain/home/index/rock_index.php
+	 * ，在[系统→基础管理→菜单管理]设置URL地址为：home,index
+	 */
+	var ad = {
+		num : 'home',
+		url : 'home,index',
+		icons : 'home',
+		name : '首页',
+		hideclose : true
+	};
+	//	var ad = {num:'home',url:'main,customer',icons:'home',name:'首页',hideclose:true};
 	if(homeurl!='')ad.url= homeurl;
 	if(homename!='')ad.name= homename;
 	addtabs(ad);
